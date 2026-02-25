@@ -1,9 +1,8 @@
 package br.com.projedata.service;
 
 import br.com.projedata.dto.RawMaterialDTO;
-import br.com.projedata.entity.ProductComposition;
 import br.com.projedata.entity.RawMaterial;
-import br.com.projedata.excessoes.RawMaterialNotFoundException;
+import br.com.projedata.exceptions.RawMaterialNotFoundException;
 import br.com.projedata.repository.ProductCompositionRepository;
 import br.com.projedata.repository.RawMaterialRepository;
 import jakarta.transaction.Transactional;

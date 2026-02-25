@@ -1,10 +1,8 @@
 package br.com.projedata;
 
-import br.com.projedata.dto.ProductDTO;
 import br.com.projedata.dto.RawMaterialDTO;
-import br.com.projedata.entity.Product;
 import br.com.projedata.entity.RawMaterial;
-import br.com.projedata.excessoes.RawMaterialNotFoundException;
+import br.com.projedata.exceptions.RawMaterialNotFoundException;
 import br.com.projedata.repository.ProductCompositionRepository;
 import br.com.projedata.repository.RawMaterialRepository;
 import br.com.projedata.service.RawMaterialService;
@@ -16,7 +14,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

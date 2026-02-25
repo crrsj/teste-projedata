@@ -1,4 +1,4 @@
-package br.com.projedata.excessoes;
+package br.com.projedata.exceptions;
 
 import br.com.projedata.dto.ValidateFieldsDTO;
 import br.com.projedata.dto.ErrorMessage;

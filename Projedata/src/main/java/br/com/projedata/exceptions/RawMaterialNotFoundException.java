@@ -1,4 +1,4 @@
-package br.com.projedata.excessoes;
+package br.com.projedata.exceptions;
 
 public class RawMaterialNotFoundException extends RuntimeException {
 

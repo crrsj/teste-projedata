@@ -3,11 +3,9 @@ package br.com.projedata;
 
 import br.com.projedata.controller.RawMaterialController;
 import br.com.projedata.dto.RawMaterialDTO;
-import br.com.projedata.entity.RawMaterial;
-import br.com.projedata.excessoes.RawMaterialNotFoundException;
+import br.com.projedata.exceptions.RawMaterialNotFoundException;
 import br.com.projedata.service.RawMaterialService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

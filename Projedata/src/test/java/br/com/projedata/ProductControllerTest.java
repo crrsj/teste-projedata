@@ -3,7 +3,7 @@ package br.com.projedata;
 
 import br.com.projedata.controller.ProductController;
 import br.com.projedata.dto.ProductDTO;
-import br.com.projedata.excessoes.ProductNotFoundException;
+import br.com.projedata.exceptions.ProductNotFoundException;
 import br.com.projedata.service.ProductService;
 
 import org.junit.jupiter.api.BeforeEach;

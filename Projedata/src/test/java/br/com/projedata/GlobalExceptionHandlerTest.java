@@ -1,8 +1,8 @@
 package br.com.projedata;
 
-import br.com.projedata.excessoes.GlobalExceptionHandler;
-import br.com.projedata.excessoes.ProductNotFoundException;
-import br.com.projedata.excessoes.RawMaterialNotFoundException;
+import br.com.projedata.exceptions.GlobalExceptionHandler;
+import br.com.projedata.exceptions.ProductNotFoundException;
+import br.com.projedata.exceptions.RawMaterialNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
