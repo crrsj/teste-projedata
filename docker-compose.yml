@@ -1,0 +1,51 @@
+services:
+
+  db:
+    image: postgres:16-alpine
+    container_name: fabrica-db
+    environment:
+      POSTGRES_DB: fabrica_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d fabrica_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+
+  backend:
+    build:
+      context: ./Projedata
+      dockerfile: Dockerfile
+    container_name: fabrica-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/fabrica_db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=12345
+      - SPRING_THREADS_VIRTUAL_ENABLED=true
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  frontend:
+    build:
+      context: ./composition-web
+      dockerfile: Dockerfile
+    container_name: fabrica-vue
+    ports:
+      - "5173:5173"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+    command: npm run dev -- --host 0.0.0.0
+
+networks:
+  default:
+    name: fabrica-network
